@@ -1,0 +1,37 @@
+page-grid-product {
+  $color: #ffffff;
+  $bg: #fb7a52;
+  .toolbar-title {
+    color: $color;
+  }
+  .toolbar-background {
+    background-color: $bg;
+  }
+  .menu-toggle {
+    color: #ffffff !important;
+  }
+  sk-grid-product-x {
+    .product-price {
+      color: $bg !important;
+    }
+    .btn-view-detail {
+      border-color: $bg !important;
+      color: $bg !important;
+    }
+    .tag {
+      background-color: $bg !important;
+    }
+  }
+  sk-grid-product-y {
+    .product-price {
+      color: $bg !important;
+    }
+    .btn-view-detail {
+      border-color: $bg !important;
+      color: $bg !important;
+    }
+    .tag {
+      background-color: $bg !important;
+    }
+  }
+}

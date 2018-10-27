@@ -1,0 +1,46 @@
+<!-- Generated template for the SkLoginAComponent component -->
+<ion-content>
+  <ion-grid class="grid-center">
+    <ion-row>
+      <ion-col col-12 text-center>
+        <img src="./assets/imgs/login-a/login-logo-a.png" alt="logo" class="login-logo">
+      </ion-col>
+      <ion-col col-12 text-center>
+        <ion-list padding-left padding-right>
+          <ion-item>
+            <ion-label floating>Username</ion-label>
+            <ion-input #username type="text" [(ngModel)]="credentials.username" (keyup.enter)="handleEnter('username')"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input #password type="password" [(ngModel)]="credentials.password" (keyup.enter)="handleEnter('password')"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col col-12 text-center padding-left padding-right>
+        <button ion-button block class="login" [disabled]="!credentials.username || !credentials.password" (click)="clickLogin()">Login</button>
+      </ion-col>
+      <ion-col col-12 no-padding text-center padding-left padding-right>
+        <p class="text">OR CONNECT WITH</p>
+      </ion-col>
+      <ion-col col-6 padding-left>
+        <button ion-button icon-left block class="facebook" (click)="clickFacebook()">
+          <ion-icon name="logo-facebook"></ion-icon>
+          <p>Facebook</p>
+        </button>
+      </ion-col>
+      <ion-col col-6 padding-right>
+        <button ion-button icon-left block class="google" (click)="clickGoogle()">
+          <ion-icon name="logo-google"></ion-icon>
+          <p>Google</p>
+        </button>
+      </ion-col>
+      <ion-col col-6 padding-left text-left>
+        <p (click)="clickRegister()">Register</p>
+      </ion-col>
+      <ion-col col-6 padding-right text-right>
+        <p (click)="clickForgotPassword()">Forgot Password?</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

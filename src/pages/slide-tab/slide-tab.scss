@@ -1,0 +1,77 @@
+page-slide-tab {
+  $color: #ffffff;
+  $bg: #fb7a52;
+  .toolbar-title {
+    color: $color;
+  }
+  .menu-toggle {
+    color: #ffffff !important;
+  }
+  .toolbar-background {
+    background-color: $bg;
+  }
+  .tabsHeight {
+    height: 34px;
+    min-height: 34px;
+  }
+  .SwipedTabs-indicatorSegment {
+    -webkit-transition: 0.2s all;
+    -moz-transition: 0.2s all;
+    -o-transition: 0.2s all;
+    transition: 0.2s all;
+    transform-origin: top 0 left 0;
+    height: 2px;
+    position: relative;
+    top: -2px;
+    background-color: $color !important;
+  }
+  .SwipedTabs-tabs ion-segment-button {
+    border: none !important;
+    color: #ab634d !important;
+    background-color: $bg !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    text-transform: capitalize !important;
+    font-size: 12px;
+  }
+  .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab {
+    color: $color !important;
+    font-size: 14px;
+  }
+  .SwipedTabs-tabs {
+    width: fit-content !important;
+    background-color: $bg;
+  }
+  .toolbar * {
+    margin: 0 !important;
+  }
+  .tabsContent .scroll-content {
+    overflow-x: scroll !important;
+    overflow-y: hidden !important;
+    background-color: $bg;
+  }
+  .tabsContent {
+    height: 50px !important;
+  }
+  .segment-button {
+    max-width: initial !important;
+    flex: auto !important;
+    width: initial !important;
+    opacity: 1 !important;
+  } // slide end
+  ion-slides {
+    display: block;
+    width: 100%;
+    height: 100% !important;
+  }
+  ion-slide {
+    height: 100% !important;
+    background-color: #ffffff !important;
+    align-items: flex-start !important;
+  }
+  ion-scroll {
+    position: inherit;
+    display: block;
+    height: 100% !important;
+  }
+}

@@ -1,0 +1,74 @@
+<!-- Generated template for the SkListPostAComponent component -->
+<ion-card *ngFor="let item of items">
+  <ion-item>
+    <ion-avatar item-start>
+      <img [src]="item.owner.profileImage">
+    </ion-avatar>
+    <h2>{{item.owner.displayname}}</h2>
+    <p>{{item.created | date:'dd MMMM yyyy HH:mm'}}</p>
+  </ion-item>
+  <ion-card-content>
+    <p>{{item.content}}</p>
+  </ion-card-content>
+  <ion-grid no-padding (click)="clickImage()">
+
+    <ion-row no-padding *ngIf="item.images && item.images.length === 1">
+      <ion-col class="mini-padding" col-12 *ngFor="let img of item.images">
+        <sk-preload-image [ratio]="{w:1, h:1}" [src]="img"></sk-preload-image>
+      </ion-col>
+    </ion-row>
+
+    <ion-row no-padding *ngIf="item.images && item.images.length === 2">
+      <ion-col class="mini-padding" col-6 *ngFor="let img of item.images">
+        <sk-preload-image [ratio]="{w:1, h:1}" [src]="img"></sk-preload-image>
+      </ion-col>
+    </ion-row>
+
+    <ion-row no-padding *ngIf="item.images && item.images.length > 2">
+      <ion-col col-8 class="mini-padding">
+        <sk-preload-image [ratio]="{w:1, h:1}" [src]="item.images[0]"></sk-preload-image>
+      </ion-col>
+      <ion-col col-4 class="mini-padding">
+        <ion-row no-padding>
+          <ion-col col-12 no-padding>
+            <sk-preload-image [ratio]="{w:1, h:1}" [src]="item.images[1]"></sk-preload-image>
+          </ion-col>
+          <ion-col col-12 no-padding class="mini-padding-top">
+            <sk-preload-image [ratio]="{w:1, h:1}" [src]="item.images[2]"></sk-preload-image>
+            <div class="image-length" *ngIf="item.images.length > 3">
+              <h2>+ {{item.images.length - 3}}</h2>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+  <ion-row>
+    <ion-col col-6 text-left>
+      <button ion-button clear small class="btn-summary btn-color">
+        <div>{{item.likes | number}} Likes</div>
+      </button>
+    </ion-col>
+    <ion-col col-6 text-right>
+      <button ion-button clear small class="btn-summary btn-color">
+        <div>{{item.comments | number}} Comments</div>
+      </button>
+    </ion-col>
+    <hr class="lines">
+    <ion-col col-6 text-left>
+      <button ion-button icon-start clear small [ngClass]="{'btn-color': item.islike === false}" (click)="clickLike()">
+        <ion-icon name="md-thumbs-up"></ion-icon>
+        &nbsp;
+        <span>Like</span>
+      </button>
+    </ion-col>
+    <ion-col col-6 text-right>
+      <button ion-button icon-start clear small class="btn-color" (click)="clickComment()">
+        <ion-icon name="ios-text"></ion-icon>
+        &nbsp;
+        <span>Comment</span>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-card>

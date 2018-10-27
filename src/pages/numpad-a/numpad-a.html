@@ -1,0 +1,26 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 text-left>
+        <button ion-button clear class="color-numpad" menuToggle>Back</button>
+      </ion-col>
+      <ion-col col-6 text-right>
+        <button ion-button icon-only clear class="color-numpad">
+          <ion-icon name="cog"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="grid-center">
+    <ion-row>
+      <ion-col col-12>
+        <sk-numpad-a [type]="'text'" (number)="onNumber($event)"></sk-numpad-a>
+        <!-- type text or password -->
+      </ion-col>
+      <ion-col col-12 padding text-right>
+        <button ion-button block outline class="color-numpad" (click)="onSubmit()">Submit</button>
+        <sk-date-realtime [format]="'EEE dd MMMM yyyy HH:mm:ss'" class="color-numpad"></sk-date-realtime>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

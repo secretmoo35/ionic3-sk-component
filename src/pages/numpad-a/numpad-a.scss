@@ -1,0 +1,28 @@
+page-numpad-a {
+  $color: #35bfbd;
+  .content {
+    background: linear-gradient(#dcdcdc, #f3f3f3);
+  }
+  .grid-center {
+    margin-top: -18px;
+    justify-content: center;
+    height: 70vh;
+  }
+  .btn-number {
+    color: $color !important;
+    border-color: $color !important;
+  }
+  .fix-height {
+    color: $color !important;
+  }
+  .color-numpad {
+    color: $color !important;
+    border-color: $color !important;
+  }
+  ion-icon.password {
+    color: $color !important;
+  }
+  button[color="secondary"].activated{
+    background-color: $color;
+  }
+}

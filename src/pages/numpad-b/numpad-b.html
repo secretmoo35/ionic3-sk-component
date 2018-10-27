@@ -1,0 +1,25 @@
+<ion-content>
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12 text-left>
+          <button ion-button clear class="color-numpad" menuToggle>Back</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12 text-center padding>
+          <sk-date-realtime [format]="'EEE dd MMMM yyyy HH:mm:ss'" class="color-numpad"></sk-date-realtime>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="grid-center">
+      <ion-row>
+        <ion-col col-12>
+          <sk-numpad-b [type]="'password'" [randomPad]="true" (number)="onNumber($event)"></sk-numpad-b>
+          <!-- type 'text' or 'password', randomPad : true or false *default: false -->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+
+</ion-content>

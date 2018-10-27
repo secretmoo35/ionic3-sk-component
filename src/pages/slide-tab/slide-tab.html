@@ -1,0 +1,39 @@
+<!--
+  Generated template for the SlideTabPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle class="menu-toggle">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+  <ion-toolbar class="tabsHeight">
+    <ion-content #MultiItemsScrollingTabs class="tabsContent">
+      <ion-segment class="SwipedTabs-tabs">
+        <ion-segment-button *ngFor='let tab of tabs ; let i = index ' id="tabTitle{{i}}" value="IngoreMe" (click)="selectTab(i)"
+          [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }'>
+          {{tab}}
+        </ion-segment-button>
+      </ion-segment>
+      <div id='indicator' class="SwipedTabs-indicatorSegment"></div>
+    </ion-content>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-slides #SwipedTabsSlider (ionSlideDrag)="animateIndicator($event)" (ionSlideDidChange)="updateIndicatorPosition()" (ionSlideWillChange)="scrollIndicatiorTab()"
+    (panend)="updateIndicatorPositionOnTouchEnd()" [pager]="false">
+    <!-- 0 -->
+    <ion-slide *ngFor="let item of tabs">
+      <h2>{{item}}</h2>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

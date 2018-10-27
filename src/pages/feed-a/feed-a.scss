@@ -1,0 +1,32 @@
+page-feed-a {
+  $bg: #3b5999;
+  .toolbar-background {
+    background-color: $bg;
+  }
+  .content {
+    background-color: #f1f1f1 !important;
+  }
+  .menu-toggle {
+    color: #ffffff !important;
+  }
+  .searchbar-input {
+    color: #ffffff !important;
+  }
+  .comment-grid {
+    background-color: #ffffff;
+    ion-avatar {
+      img {
+        border-radius: 100% !important;
+        object-fit: cover;
+      }
+    }
+  }
+  #myPost {
+    width: calc(100% - 10px);
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    font-size: 20px;
+    resize: none;
+  }
+}

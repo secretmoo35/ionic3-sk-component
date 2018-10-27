@@ -1,0 +1,54 @@
+page-profile-b {
+  $bg: #0b1f44;
+  $bg-filter: rgba(11, 31, 68, 0.65);
+  .content {
+    background-color: #f1f1f1 !important;
+  }
+  .profile-grid {
+    background: -moz-linear-gradient(top, $bg-filter 0%, $bg-filter 50%, $bg-filter 100%);
+    background: -webkit-linear-gradient(top, $bg-filter 0%, $bg-filter 50%, $bg-filter 100%);
+    background: linear-gradient(to bottom, $bg-filter 0%, $bg-filter 110%, $bg-filter 100%), url('../assets/imgs/profile-b/profile-bg-b.png');
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$bg-filter, endColorstr=$bg-filter, GradientType=0);
+    background-size: cover;
+    height: 50vh;
+    justify-content: center;
+  }
+  .position-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  .menu-toggle {
+    color: #ffffff !important;
+  }
+  .profile-detail {
+    margin-top: 50px;
+  }
+  .profile-image {
+    margin-top: 00px;
+    width: 30vw;
+    height: 30vw;
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: cover !important;
+    border-radius: 100%;
+    border: 2px solid #ffffff;
+  }
+  .profile-title {
+    color: #ffffff;
+  }
+  .title-header {
+    color: #ffffff;
+  }
+  .subtitle-header {
+    color: #9E9E9E;
+  }
+  .option-row {
+    margin-top: 40px;
+  }
+  @media all and (orientation: landscape) {
+    .profile-grid {
+      height: auto !important;
+    }
+  }
+}

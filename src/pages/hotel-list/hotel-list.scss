@@ -1,0 +1,55 @@
+page-hotel-list {
+  .content {
+    background-color: #fafafc;
+  }
+  ion-card {
+    // box-shadow: none !important;
+    border-radius: 14px !important;
+    img {
+      object-fit: cover;
+    }
+    ion-card-content {
+      padding: 0px 16px 0px 16px !important;
+    }
+    .price-option {
+      margin: 8px !important;
+      ion-col {
+        border-top: 1px solid #f5f5f5;
+        border-left: 1px solid #f5f5f5;
+        border-right: 1px solid #f5f5f5;
+        border-bottom: 1px solid #f5f5f5;
+      }
+    }
+    .price-name {
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+    .price-number {
+      color: #4CAF50;
+      font-size: 2.4rem;
+    }
+    .features-option {
+      img {
+        width: 30px;
+        height: 30px;
+        display: inline;
+        margin: 0px 6px 0px 6px;
+      }
+    }
+    ul {
+      position: absolute;
+      right: 14px;
+      bottom: 7px;
+      padding: 0px;
+      margin: 0px;
+      &.rating li {
+        padding: 0px !important;
+        background: none;
+        color: #ffb400;
+        ion-icon {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+page-numpad-b {
+  $color: #3f499a;
+  .content {
+    background: linear-gradient(#141950, #242f4b);
+  }
+  .grid-center {
+    justify-content: center;
+    height: 70vh;
+  }
+  .btn-number {
+    color: #ffffff !important;
+    border-color: $color !important;
+  }
+  .fix-height {
+    color: #ffffff !important;
+  }
+  .color-numpad {
+    color: #ffffff !important;
+    border-color: $color !important;
+  }
+  button[color="secondary"].activated{
+    background-color:#3f499a;
+  }
+}

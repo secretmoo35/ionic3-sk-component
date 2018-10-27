@@ -1,0 +1,45 @@
+sk-list-post-a {
+  .mini-padding {
+    padding: 1px !important;
+  }
+  .mini-padding-top {
+    padding-top: 2px;
+  }
+  .card {
+    box-shadow: none !important;
+    margin: 8px 0px 8px 0px;
+    width: 100%;
+    img {
+      object-fit: cover;
+    }
+    .btn-summary {
+      font-size: 1.1rem !important;
+    }
+    .btn-color {
+      color: #aaaaaa !important;
+    }
+    .button {
+      span {
+        margin-top: 0px;
+      }
+    }
+    .lines {
+      margin: 0px !important;
+    }
+  }
+  .image-length {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6392156862745098);
+    top: 2px;
+    height: calc(100% - 2px);
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      font-size: 8vw !important;
+      color: #ffffff;
+    }
+  }
+}

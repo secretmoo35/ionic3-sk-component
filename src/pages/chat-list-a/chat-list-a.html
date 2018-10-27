@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle class="menu-toggle">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Chat List A</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only class="menu-toggle" (click)="isSearch = !isSearch">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+    <ion-searchbar mode="md" *ngIf="isSearch" [(ngModel)]="searchText" (keyup.enter)="search()"></ion-searchbar>
+    <ion-item *ngFor="let list of chats" (click)="onChat(list)">
+      <ion-avatar item-start class="online {{list.status === 'online' ? 'online' : list.status === 'busy' ? 'busy' :'offline'}}">
+        <img [src]="list.profileImage">
+      </ion-avatar>
+      <h2>{{list.displayname}}</h2>
+      <p>{{list.lastmessage}}</p>
+      <ion-note item-end text-right>
+        <p>{{list.created | date:'dd/MM/yy'}}</p>
+        <p>{{list.created | date:'HH:mm'}}</p>
+      </ion-note>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

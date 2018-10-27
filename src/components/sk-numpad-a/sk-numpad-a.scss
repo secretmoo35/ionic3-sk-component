@@ -1,0 +1,29 @@
+sk-numpad-a {
+  button {
+    border-radius: 100% !important;
+    border: 2px solid !important;
+    width: 10vh !important;
+    height: 10vh !important;
+    margin: 10px !important;
+    font-size: 4vh !important;
+    ion-icon {
+      margin-left: -3px;
+    }
+  }
+  .fix-height {
+    min-height: 40px !important;
+    font-size: 3.4rem !important;
+    height:auto;
+  }
+  .fix-height-password {
+    min-height: 62px !important;
+    margin-top: 10px;
+  }
+  .numpad {
+    margin-top: 10px !important;
+  }
+  .password {
+    font-size: 24px !important;
+    margin-right: 4px;
+  }
+}

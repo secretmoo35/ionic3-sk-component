@@ -1,0 +1,75 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle class="menu-toggle">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Profile A</ion-title>
+    <ion-buttons end>
+      <button ion-button class="menu-toggle" *ngIf="!isEdit" (click)="onEdit()">
+        EDIT
+      </button>
+      <button ion-button class="menu-toggle" *ngIf="isEdit" (click)="onSave()">
+        SAVE
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-grid no-padding class="profile-grid">
+    <ion-row no-padding>
+      <ion-col col-12 no-padding text-center>
+        <img [src]="profile.profileImage" class="profile-image" alt="profile-image">
+        <button *ngIf="isEdit" ion-button icon-only round class="btn-upload" color="light">
+          <ion-icon name="camera"></ion-icon>
+        </button>
+        <h1 class="profile-title">{{profile.firstname}} {{profile.lastname}}</h1>
+        <p class="profile-title">{{profile.email}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid no-padding class="option-grid">
+    <ion-row no-padding>
+      <ion-col col-4 no-padding text-center class="border-left">
+        <h3 no-margin padding-top class="title-header">{{profile.post}}</h3>
+        <p no-margin padding-bottom>
+          Posts
+        </p>
+      </ion-col>
+      <ion-col col-4 no-padding text-center class="border-left">
+        <h3 no-margin padding-top class="title-header">{{profile.followers | number}}</h3>
+        <p no-margin padding-bottom>
+          Followers
+        </p>
+      </ion-col>
+      <ion-col col-4 no-padding text-center>
+        <h3 no-margin padding-top class="title-header">{{profile.following | number}}</h3>
+        <p no-margin padding-bottom>
+          Following
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list padding-left padding-right>
+    <ion-item>
+      <ion-label floating>First name</ion-label>
+      <ion-input #firstname type="text" [(ngModel)]="profile.firstname" (keyup.enter)="handleEnter('firstname')" [disabled]="!isEdit"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Last name</ion-label>
+      <ion-input #lastname type="text" [(ngModel)]="profile.lastname" (keyup.enter)="handleEnter('lastname')" [disabled]="!isEdit"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>E-mail</ion-label>
+      <ion-input #email type="email" [(ngModel)]="profile.email" (keyup.enter)="handleEnter('email')" [disabled]="!isEdit"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Phone number</ion-label>
+      <ion-input #phonenumber type="tel" [(ngModel)]="profile.phonenumber" (keyup.enter)="handleEnter('phonenumber')" [disabled]="!isEdit"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>

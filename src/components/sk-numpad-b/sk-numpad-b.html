@@ -1,0 +1,33 @@
+<!-- Generated template for the SkNumpadBComponent component -->
+<ion-grid>
+  <ion-row>
+    <ion-col col-12 text-center text-center>
+      <h2 *ngIf="!type || type === 'text'" class="fix-height">{{text}}</h2>
+      <h2 *ngIf="type && type === 'password'" class="fix-height">{{textPassword}}</h2>
+    </ion-col>
+  </ion-row>
+  <ion-row class="numpad">
+    <ion-col col-12 text-center>
+      <button ion-button outline class="btn-number" color="secondary" *ngFor="let num of numberPad[0].row" (click)="numberText(num)">{{num}}</button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-12 text-center>
+      <button ion-button outline class="btn-number" color="secondary" *ngFor="let num of numberPad[1].row" (click)="numberText(num)">{{num}}</button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-12 text-center>
+      <button ion-button outline class="btn-number" color="secondary" *ngFor="let num of numberPad[2].row" (click)="numberText(num)">{{num}}</button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-12 text-center>
+      <button ion-button clear color="light" (click)="clearNumberText()">C</button>
+      <button ion-button outline class="btn-number" color="secondary" (click)="numberText(numberPad[3].row[0])">{{numberPad[3].row[0]}}</button>
+      <button ion-button outline color="danger" (click)="delNumberText()">
+        <ion-icon name="backspace"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

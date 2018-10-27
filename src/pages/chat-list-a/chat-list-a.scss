@@ -1,0 +1,34 @@
+page-chat-list-a {
+  $bg: #3b5999;
+  .toolbar-background {
+    background-color: $bg;
+  }
+  .toolbar-title {
+    color: #ffffff !important;
+  }
+  .menu-toggle {
+    color: #ffffff !important;
+  }
+  ion-list {
+    ion-avatar {
+      border-radius: 100%;
+      border: 3px solid;
+    }
+    ion-searchbar{
+        position: fixed;
+        top: 50px;
+        z-index: 999;
+    }
+    .online {
+      border-color: #64DD17;
+    }
+    .offline {
+      border-color: #9E9E9E;
+      opacity: 0.5;
+    }
+    .busy {
+      border-color: #FFD600;
+      opacity: 0.5;
+    }
+  }
+}

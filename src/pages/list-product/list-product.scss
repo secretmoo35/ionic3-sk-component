@@ -1,0 +1,33 @@
+page-list-product {
+  $color: #ffffff;
+  $bg: #fb7a52;
+  .toolbar-title {
+    color: $color;
+  }
+  .toolbar-background {
+    background-color: $bg;
+  }
+  .menu-toggle {
+    color: #ffffff !important;
+  }
+  .content {
+    background-color: #f7f7f7;
+  }
+  ion-searchbar {
+    position: fixed;
+    top: 50px;
+    z-index: 999;
+  }
+  sk-list-product {
+    .product-price {
+      color: $bg !important;
+    }
+    .btn-view-detail {
+      border-color: $bg !important;
+      color: $bg !important;
+    }
+    .tag {
+      background-color: $bg !important;
+    }
+  }
+}

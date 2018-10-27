@@ -1,0 +1,107 @@
+page-chat-a {
+  $chat: #3b5999;
+  $chat-l: #e4e4e4;
+  .toolbar-background {
+    background-color: $chat;
+  }
+  .toolbar-title {
+    color: #ffffff !important;
+  }
+  .menu-toggle {
+    color: #ffffff !important;
+  }
+  .content {
+    background-color: #fbfbfb !important;
+  }
+  .item {
+    background-color: transparent;
+  }
+  .chat {
+    img.profile-pic {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 10px;
+    }
+    img.profile-pic.left {
+      left: 10px;
+    }
+    img.profile-pic.right {
+      right: 10px;
+    }
+    .message {
+      font-size: medium;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .message-detail {
+      white-space: nowrap;
+      font-size: 14px;
+    }
+    .chat-bubble {
+      border-radius: 5px;
+      display: inline-block;
+      padding: 10px 18px;
+      position: relative;
+      margin: 10px;
+      max-width: 80%;
+    }
+    .chat-bubble:before {
+      content: "\00a0";
+      display: block;
+      height: 16px;
+      width: 9px;
+      position: absolute;
+      bottom: -7px;
+    }
+    .chat-bubble.left {
+      background-color: $chat-l;
+      float: left;
+      margin-left: 45px;
+    }
+    .chat-bubble.left:before {
+      background-color: $chat-l;
+      left: 10px;
+      -webkit-transform: rotate(70deg) skew(5deg);
+    }
+    .chat-bubble.right {
+      background-color: $chat;
+      color: #ffffff;
+      float: right;
+      margin-right: 45px;
+    }
+    .chat-bubble.right:before {
+      background-color: $chat;
+      right: 10px;
+      -webkit-transform: rotate(118deg) skew(-5deg);
+    }
+    .chat-bubble.right a.autolinker {
+      color: #000;
+      font-weight: bold;
+    }
+  }
+  #myChat {
+    width: calc(100% - 10px);
+    border: 0;
+    border-radius: 0;
+    font-size: 16px;
+    background: transparent;
+    resize: none;
+    border-bottom: 1px solid $chat;
+  }
+  ion-icon[name="send"] {
+    color: $chat;
+  }
+  .footer {
+    background-color: #ffffff;
+  }
+  .option {
+    ion-icon {
+      color: #9E9E9E;
+    }
+  }
+  .chat-box {
+    padding: 15px 0px 15px 0px;
+  }
+}

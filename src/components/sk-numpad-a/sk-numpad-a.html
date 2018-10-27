@@ -1,0 +1,41 @@
+<!-- Generated template for the SkNumpadAComponent component -->
+<ion-grid>
+  <ion-row>
+    <ion-col col-12 text-center text-center>
+      <div *ngIf="type && type === 'password'" class="fix-height-password" padding-top padding-bottom>
+        <ion-icon class="password" *ngFor="let lng of getTextLength()" name="md-radio-button-on"></ion-icon>
+      </div>
+      <h2 *ngIf="!type || type === 'text'" class="fix-height">{{text}}</h2>
+    </ion-col>
+  </ion-row>
+  <ion-row class="numpad">
+    <ion-col col-12 text-center>
+      <button ion-button outline class="btn-number" color="secondary" (click)="numberText('1')">1</button>
+      <button ion-button outline class="btn-number" color="secondary" (click)="numberText('2')">2</button>
+      <button ion-button outline class="btn-number" color="secondary" (click)="numberText('3')">3</button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-12 text-center>
+      <button ion-button outline class="btn-number" color="secondary" (click)="numberText('4')">4</button>
+      <button ion-button outline class="btn-number" color="secondary" (click)="numberText('5')">5</button>
+      <button ion-button outline class="btn-number" color="secondary" (click)="numberText('6')">6</button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-12 text-center>
+      <button ion-button outline class="btn-number" color="secondary" (click)="numberText('7')">7</button>
+      <button ion-button outline class="btn-number" color="secondary" (click)="numberText('8')">8</button>
+      <button ion-button outline class="btn-number" color="secondary" (click)="numberText('9')">9</button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-12 text-center>
+      <button ion-button clear color="dark" (click)="clearNumberText()">C</button>
+      <button ion-button outline class="btn-number" color="secondary" (click)="numberText('0')">0</button>
+      <button ion-button outline class="btn-del" color="danger" (click)="delNumberText()">
+        <ion-icon name="backspace"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

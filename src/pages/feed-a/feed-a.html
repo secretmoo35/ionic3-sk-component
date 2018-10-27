@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle class="menu-toggle">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-searchbar mode="ios" [(ngModel)]="searchText" (keyup.enter)="search()"></ion-searchbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-grid class="comment-grid">
+    <ion-row>
+      <ion-col col-2>
+        <ion-avatar item-left>
+          <img src="./assets/imgs/feed-a/profile.jpg">
+        </ion-avatar>
+      </ion-col>
+      <ion-col col-10>
+        <ion-row>
+          <ion-col col-12>
+            <textarea #myPost id="myPost" placeholder="Post your story!" rows="1" (keydown)="resize()" [(ngModel)]="postText"></textarea>
+          </ion-col>
+          <ion-col col-12 text-right>
+            <button ion-button icon-only clear color="dark" (click)="openCamera()">
+              <ion-icon name="camera"></ion-icon>
+            </button>
+            <button ion-button icon-only clear color="secondary" (click)="openPhoto()">
+              <ion-icon name="images"></ion-icon>
+            </button>
+            <button ion-button icon-only clear color="primary" (click)="openIcon()">
+              <ion-icon name="happy"></ion-icon>
+            </button>
+            <button ion-button icon-only clear color="danger" (click)="openLocation()">
+              <ion-icon name="pin"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col col-12 text-center *ngIf="postText">
+        <button ion-button block outline (click)="onPost()">
+          POST!
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div *ngIf="posts && posts.length > 0">
+    <sk-list-post-a [items]="posts" (image)="onViewImage()" (like)="onLike()" (comment)="onComment()"></sk-list-post-a>
+  </div>
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-content>
+  <ion-grid no-padding class="profile-grid">
+    <ion-row class="position-header">
+      <ion-col col-6 text-left>
+        <button ion-button clear icon-only menuToggle class="menu-toggle">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-6 text-right>
+        <button ion-button clear class="menu-toggle" (click)="onEdit()">
+          EDIT
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row no-padding class="profile-detail">
+      <ion-col col-12 no-padding text-center>
+        <img [src]="profile.profileImage" class="profile-image" alt="profile-image">
+        <h1 class="profile-title">{{profile.firstname}} {{profile.lastname}}</h1>
+        <p class="profile-title">{{profile.email}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row padding class="option-row">
+      <ion-col col-4 padding text-center>
+        <p no-margin padding-top class="title-header">{{profile.post}}</p>
+        <p no-margin padding-bottom class="subtitle-header">
+          Posts
+        </p>
+      </ion-col>
+      <ion-col col-4 padding text-center>
+        <p no-margin padding-top class="title-header">{{profile.followers | number}}</p>
+        <p no-margin padding-bottom class="subtitle-header">
+          Followers
+        </p>
+      </ion-col>
+      <ion-col col-4 padding text-center>
+        <p no-margin padding-top class="title-header">{{profile.following | number}}</p>
+        <p no-margin padding-bottom class="subtitle-header">
+          Following
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div *ngIf="posts && posts.length > 0">
+    <sk-list-post-a [items]="posts" (image)="onViewImage()" (like)="onLike()" (comment)="onComment()"></sk-list-post-a>
+  </div>
+</ion-content>

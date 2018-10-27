@@ -1,0 +1,66 @@
+<!-- Generated template for the SkRegisterCComponent component -->
+<ion-content>
+  <ion-grid class="grid-center">
+    <ion-row>
+      <ion-col col-12 text-center>
+        <ion-list padding-left padding-right>
+          <ion-item>
+            <ion-label floating>First name</ion-label>
+            <ion-input #firstname type="text" [(ngModel)]="credentials.firstname" (keyup.enter)="handleEnter('firstname')"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Last name</ion-label>
+            <ion-input #lastname type="text" [(ngModel)]="credentials.lastname" (keyup.enter)="handleEnter('lastname')"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>E-mail</ion-label>
+            <ion-input #email type="email" [(ngModel)]="credentials.email" (keyup.enter)="handleEnter('email')"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Phone number</ion-label>
+            <ion-input #phonenumber type="tel" [(ngModel)]="credentials.phonenumber" (keyup.enter)="handleEnter('phonenumber')"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Username</ion-label>
+            <ion-input #username type="text" [(ngModel)]="credentials.username" (keyup.enter)="handleEnter('username')"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input #password type="password" [(ngModel)]="credentials.password" (keyup.enter)="handleEnter('password')"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col col-12 text-center padding-left padding-right>
+        <button ion-button block class="register" [disabled]="!credentials.username || !credentials.password || !credentials.firstname|| !credentials.lastname|| !credentials.email|| !credentials.phonenumber"
+          (click)="clickRegister()">Register</button>
+      </ion-col>
+      <ion-col col-12 text-center padding-left padding-right>
+        <p class="text-white" (click)="clickGoLogin()">HAVE ACCOUNT?</p>
+      </ion-col>
+      <ion-col col-12 no-padding padding-top padding-left padding-right>
+        <button ion-button icon-left block class="facebook" (click)="clickFacebook()">
+          <ion-icon name="logo-facebook"></ion-icon>
+          <p>Facebook</p>
+        </button>
+      </ion-col>
+      <ion-col col-12 no-padding padding-left padding-right>
+        <button ion-button icon-left block class="google" (click)="clickGoogle()">
+          <ion-icon name="logo-google"></ion-icon>
+          <p>Google</p>
+        </button>
+      </ion-col>
+      <ion-col col-12 no-padding padding-left padding-right>
+        <button ion-button icon-left block class="twitter" (click)="clickTwister()">
+          <ion-icon name="logo-twitter"></ion-icon>
+          <p>Twister</p>
+        </button>
+      </ion-col>
+      <ion-col col-12 no-padding padding-left padding-right>
+        <button ion-button icon-left block class="linkedin" (click)="clickLinkedIn()">
+          <ion-icon name="logo-linkedin"></ion-icon>
+          <p>LinkedIn</p>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
